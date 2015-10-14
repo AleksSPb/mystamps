@@ -48,8 +48,8 @@ public class ErrorController {
 			@RequestHeader(value = "user-agent", required = false) String agent) {
 		
 		// TODO: sanitize all user's values (#60)
-		String page = (String)request.getAttribute("javax.servlet.error.request_uri");
-		String ip   = request.getRemoteAddr();
+		String page   = (String)request.getAttribute("javax.servlet.error.request_uri");
+		String ip     = request.getRemoteAddr();
 		String method = request.getMethod();
 		
 		User currentUser = null;

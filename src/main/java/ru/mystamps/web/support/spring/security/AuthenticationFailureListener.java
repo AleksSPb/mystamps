@@ -50,7 +50,7 @@ public class AuthenticationFailureListener
 		
 		// TODO: log more info (login for example) (#59)
 		// TODO: sanitize all user's values (#60)
-		String method = request.getMethod();
+		String method  = request.getMethod();
 		String page    = request.getRequestURI();
 		String ip      = request.getRemoteAddr();
 		String referer = request.getHeader("referer");
