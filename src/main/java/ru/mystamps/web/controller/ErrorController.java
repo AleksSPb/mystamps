@@ -50,13 +50,14 @@ public class ErrorController {
 		// TODO: sanitize all user's values (#60)
 		String page = (String)request.getAttribute("javax.servlet.error.request_uri");
 		String ip   = request.getRemoteAddr();
+		String method = request.getMethod();
 		
 		User currentUser = null;
 		if (userDetails != null) {
 			currentUser = userDetails.getUser();
 		}
 		
-		siteService.logAboutAbsentPage(page, currentUser, ip, referer, agent);
+		siteService.logAboutAbsentPage(page, method, currentUser, ip, referer, agent);
 	}
 	
 	@RequestMapping(Url.INTERNAL_ERROR_PAGE)

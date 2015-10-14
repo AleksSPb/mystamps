@@ -51,6 +51,9 @@ public class SuspiciousActivity {
 	
 	@Column(length = PAGE_URL_LENGTH, nullable = false)
 	private String page;
+
+	@Column(length = 7, nullable = false)
+	private String method;
 	
 	@ManyToOne
 	private User user;
