@@ -115,7 +115,7 @@
 								In this collection is no stamps
 							</p>
 							/*/-->
-							
+							<div id="seriesList">
 							<ul th:if="${not #lists.isEmpty(seriesOfCollection)}" th:remove="all-but-first">
 								<li th:each="series : ${seriesOfCollection}">
 									<span th:if="${series.category.id != null}" th:remove="tag">
@@ -152,6 +152,7 @@
 									</a>
 								</li>
 							</ul>
+							</div>
 						</div>
 						<div class="col-sm-2">
 							<!--/*/
@@ -202,6 +203,7 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="http://yandex.st/jquery/1.9.1/jquery.min.js" th:src="${JQUERY_JS}"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" th:src="${BOOTSTRAP_JS}"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
 		
 		<!--/*/
 		<th:block togglz:active="SHOW_COLLECTION_CHARTS" th:if="${not #lists.isEmpty(seriesOfCollection)}">
@@ -215,7 +217,8 @@
 					/*[+
 					initPage(
 						[[${statOfCollectionByCategories}]],
-						[[${statOfCollectionByCountries}]]
+						[[${statOfCollectionByCountries}]],
+						[[${seriesOfCollection}]]
 					);
 					+]*/
 					
@@ -234,6 +237,8 @@
 						['Congo', 20],
 						['Brazil', 4],
 						['Korea', 2]
+					], ['series1',
+						'series2'
 					]);
 					/* -]*/
 				});
