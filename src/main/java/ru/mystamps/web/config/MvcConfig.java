@@ -89,6 +89,8 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 			.addResourceLocations("classpath:/META-INF/resources/webjars/jquery/1.9.1/");
 		registry.addResourceHandler("/public/selectize/**")
 			.addResourceLocations("classpath:/META-INF/resources/webjars/selectize.js/0.12.1/");
+		registry.addResourceHandler("/public/lodash/**")
+			.addResourceLocations("classpath:/META-INF/resources/webjars/lodash/4.0.0/");
 	}
 	
 	@Override

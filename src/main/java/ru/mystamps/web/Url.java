@@ -86,6 +86,7 @@ public final class Url {
 	public static final String BOOTSTRAP_CSS          = "/public/bootstrap/css/bootstrap.min.css";
 	public static final String BOOTSTRAP_JS           = "/public/bootstrap/js/bootstrap.min.js";
 	public static final String JQUERY_JS              = "/public/jquery/jquery.min.js";
+	public static final String LODASH_JS              = "/public/lodash/lodash.min.js";
 	// CheckStyle: ignore LineLength for next 1 lines
 	public static final String BOOTSTRAP_LANGUAGE     = "https://cdn.rawgit.com/usrz/bootstrap-languages/3ac2a3d2b27ac43a471cd99e79d378a03b2c6b5f/languages.min.css";
 	
@@ -137,6 +138,7 @@ public final class Url {
 			map.put("BOOTSTRAP_CSS", BOOTSTRAP_CSS);
 			map.put("BOOTSTRAP_JS", BOOTSTRAP_JS);
 			map.put("JQUERY_JS", JQUERY_JS);
+			map.put("LODASH_JS", LODASH_JS);
 			map.put("SELECTIZE_CSS", SELECTIZE_CSS);
 			map.put("SELECTIZE_JS", SELECTIZE_JS);
 			map.put("GET_IMAGE_PAGE", GET_IMAGE_PAGE);

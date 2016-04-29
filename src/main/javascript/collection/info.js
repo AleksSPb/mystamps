@@ -5,7 +5,7 @@ function initPage(statByCategories, statByCountries, seriesOfCollection) {
 		drawChart('categories-chart', createDataTable(statByCategories));
 		drawChart('countries-chart', createDataTable(statByCountries));
 	});
-	makeCategoriesList('seriesList',seriesOfCollection);
+	makeCategoriesList('seriesList',seriesOfCollection, 'category.name', 'country.name');
 }
 
 function drawChart(containerId, dataTable) {
@@ -24,13 +24,26 @@ function createDataTable(stat) {
 	return table;
 };
 
-function makeCategoriesList(elementId, categoriesList) {
+function makeCategoriesList(elementId, categoriesList, firstGrouping, secondGrouping) {
 	var element = document.getElementById(elementId);
-	element.innerHTML = '';
-	element.innerHTML = 'It a text before list';
+	element.innerHTML = 'It a text before ist';
 	var list = document.createElement("ul");
+	var level1_group = _.groupBy(categoriesList, firstGrouping);
+	console.log(level1_group);
+	console.log('End grouped object')
+	console.log(Object.keys(level1_group)); 
+	
+	console.log('Try to print names')
+	for(var j in level1_group) {
+	console.log(j);
+	console.log(level1_group[j]);
+	}
+	
+
+	console.log('End of objects')
 	for(var i in categoriesList) {
 	var elemText = document.createElement("a");
+	elemText.href = '/category/' + categoriesList[i].category.id+ '/' + categoriesList[i].category.slug;
 	elemText.innerHTML = categoriesList[i].category.name;
 	element.appendChild(elemText);
 	
@@ -39,11 +52,4 @@ function makeCategoriesList(elementId, categoriesList) {
 	list.appendChild(elem);
 	element.appendChild(list);
 	}
-	
-	
-	var table = new google.visualization.DataTable();
-	table.addColumn('string', 'Category/Country');
-	table.addColumn('number', 'Quantity of stamps');
-	table.addRows(stat);
-	return table;
 };
